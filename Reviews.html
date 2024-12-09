@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            background-color: #5D3FD3;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #4336A2;
+        }
+        .review-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .review-item {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .review-item h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="orders.html">Orders</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="special_offers.html">Special Offers</a>
+            <a href="menu.html">Menu</a>
+        </nav>
+    </header>
+    
+    <div class="review-container" id="review-container"></div> <!-- مكان المراجعات -->
+
+    <script>
+        // بيانات المراجعات
+        const reviews = [
+            { name: "محمد العلي", review: "الطعام لذيذ جدًا، والموظف فهد كان متعاونًا وبشوشًا." },
+            { name: "سارة أحمد", review: "الخدمة ممتازة والبيتزا كانت شهية، الموظف زيد كان رائعًا!" },
+            { name: "عبدالله خالد", review: "استمتعت بالأجواء، الطعام كان مميزًا وخدمة بدر كانت سريعة." },
+            { name: "نورة فيصل", review: "عبدالرحمن كان متعاونًا جدًا، والمواقف واسعة ومريحة." },
+            { name: "أحمد سالم", review: "الشاورما كانت رائعة، والخدمة كانت ممتازة من الموظف أسامة." },
+            { name: "ريم عبدالله", review: "جودة الطعام ممتازة والموظف فهد قدم خدمة رائعة." },
+            { name: "فيصل ناصر", review: "الأطباق البحرية كانت طازجة ولذيذة، شكرًا لعبدالرحمن على خدمته." },
+            { name: "هند محمد", review: "الأجواء العائلية رائعة وخدمة زيد جعلت تجربتي ممتازة." },
+            { name: "علي الحربي", review: "الطعام لذيذ جدًا، وأشكر بدر على اقتراحه للأطباق." },
+            { name: "فاطمة العبدالله", review: "الأطباق كانت مميزة والموظف أسامة كان محترفًا جدًا." },
+            { name: "نايف سعود", review: "المواقف مريحة والطعام ممتاز، شكرًا لفهد على الخدمة." },
+            { name: "لينا خالد", review: "الديكور جميل والطعام شهي، وعبدالرحمن كان رائعًا." },
+            { name: "تركي العتيبي", review: "البيتزا كانت الأفضل، زيد كان محترفًا في خدمته." },
+            { name: "منى القحطاني", review: "السلطات طازجة والخدمة ممتازة، شكرًا لبدر." },
+            { name: "راشد المطيري", review: "تجربة مميزة جدًا، أسامة ساعدنا باختيار أفضل الأطباق." }
+        ];
+
+        // دالة لعرض المراجعات
+        function displayReviews() {
+            const container = document.getElementById('review-container');
+            reviews.forEach(review => {
+                const reviewItem = document.createElement('div');
+                reviewItem.classList.add('review-item');
+                reviewItem.innerHTML = `
+                    <h3>${review.name}</h3>
+                    <p>"${review.review}"</p>
+                `;
+                container.appendChild(reviewItem);
+            });
+        }
+
+        // استدعاء الدالة لعرض المراجعات عند تحميل الصفحة
+        window.onload = displayReviews;
+    </script>
+</body>
+</html>
+
